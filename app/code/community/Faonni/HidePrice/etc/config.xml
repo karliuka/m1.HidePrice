@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Faonni
+ *  
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade module to newer
+ * versions in the future.
+ * 
+ * @package     Faonni_HidePrice
+ * @copyright   Copyright (c) 2015 Karliuka Vitalii(karliuka.vitalii@gmail.com) 
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config>
+	<modules>
+		<Faonni_HidePrice>
+			<version>1.1.1</version>
+		</Faonni_HidePrice>
+	</modules>
+	<global>
+		<helpers>
+			<faonni_hideprice>
+				<class>Faonni_HidePrice_Helper</class>
+			</faonni_hideprice>
+		</helpers>
+        <models>
+            <faonni_hideprice>
+                <class>Faonni_HidePrice_Model</class>
+            </faonni_hideprice>		
+        </models>		
+	</global>
+    <frontend>
+        <events>					
+			<catalog_product_collection_load_after>
+				<observers>
+					<faonni_hideprice_collection_load>
+						<type>singleton</type>
+						<class>faonni_hideprice/observer</class>
+						<method>collectionLoadAfter</method>
+					</faonni_hideprice_collection_load>
+				</observers>
+			</catalog_product_collection_load_after>
+			<catalog_product_load_after>
+				<observers>
+					<faonni_hideprice_product_load>
+						<class>faonni_hideprice/observer</class>
+						<method>productLoadAfter</method>
+					</faonni_hideprice_product_load>
+				</observers>
+			</catalog_product_load_after>		
+        </events>		
+    </frontend>
+    <default>
+        <catalog>
+            <access_option>
+                <hide_price>0</hide_price>
+            </access_option>
+        </catalog>
+    </default>		
+</config> 
