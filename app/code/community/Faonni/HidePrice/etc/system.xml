@@ -25,7 +25,7 @@
     <sections>
         <catalog>
             <groups>
-                <access_option>				
+                <access_option>
                     <fields>
                         <hide_price translate="label">
                             <label>Hide Price</label>
@@ -35,7 +35,7 @@
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
-                        </hide_price>					
+                        </hide_price>
                     </fields>
                 </access_option>
             </groups>

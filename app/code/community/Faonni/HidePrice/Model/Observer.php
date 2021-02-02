@@ -24,42 +24,40 @@ class Faonni_HidePrice_Model_Observer
     /**
      * Check available product price from collection
      *
-     * @param   Varien_Event_Observer $observer
-     * @return  Faonni_HideAddToCart_Model_Observer
-     */	
+     * @param Varien_Event_Observer $observer
+     * @return void
+     */
     public function collectionLoadAfter(Varien_Event_Observer $observer)
     {
-		if (!Mage::helper('faonni_hideprice')->isEnabled()) {
-			return $this;
-		}
-		
-		if (!Mage::helper('faonni_hideprice')->isAvailable()) {
-			/** @var $collection Mage_Catalog_Model_Resource_Product_Collection */
-			$collection = $observer->getEvent()->getCollection();
-			foreach ($collection as $product) {
-				$product->setCanShowPrice(false);
-			}
-		}
-		return $this;
+        if (!Mage::helper('faonni_hideprice')->isEnabled()) {
+            return;
+        }
+
+        if (!Mage::helper('faonni_hideprice')->isAvailable()) {
+            /** @var Mage_Catalog_Model_Resource_Product_Collection $collection */
+            $collection = $observer->getEvent()->getCollection();
+            foreach ($collection as $product) {
+                $product->setCanShowPrice(false);
+            }
+        }
     }
-	
+
     /**
      * Check available product price
      *
-     * @param   Varien_Event_Observer $observer
-     * @return  Faonni_HideAddToCart_Model_Observer
-     */		
+     * @param Varien_Event_Observer $observer
+     * @return void
+     */
     public function productLoadAfter(Varien_Event_Observer $observer)
     {
-		if (!Mage::helper('faonni_hideprice')->isEnabled()) {
-			return $this;
-		}
-		
-		if (!Mage::helper('faonni_hideprice')->isAvailable()) { 
-			/** @var $product Mage_Catalog_Model_Product */
-			$product = $observer->getEvent()->getProduct();
-			$product->setCanShowPrice(false);
-		}
-		return $this;
-    }	
+        if (!Mage::helper('faonni_hideprice')->isEnabled()) {
+            return;
+        }
+
+        if (!Mage::helper('faonni_hideprice')->isAvailable()) { 
+            /** @var Mage_Catalog_Model_Product $product */
+            $product = $observer->getEvent()->getProduct();
+            $product->setCanShowPrice(false);
+        }
+    }
 }

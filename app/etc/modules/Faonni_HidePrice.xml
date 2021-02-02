@@ -22,13 +22,13 @@
  */
 -->
 <config>
-	<modules>
-		<Faonni_HidePrice>
-			<active>true</active>
-			<codePool>community</codePool>
+    <modules>
+        <Faonni_HidePrice>
+            <active>true</active>
+            <codePool>community</codePool>
             <depends>
-                <Faonni_HideAddToCart />
-            </depends>				
-		</Faonni_HidePrice>
-	</modules>
+                <Faonni_HideAddToCart/>
+            </depends>
+        </Faonni_HidePrice>
+    </modules>
 </config>

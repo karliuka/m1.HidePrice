@@ -22,43 +22,43 @@
  */
 -->
 <config>
-	<modules>
-		<Faonni_HidePrice>
-			<version>1.1.1</version>
-		</Faonni_HidePrice>
-	</modules>
-	<global>
-		<helpers>
-			<faonni_hideprice>
-				<class>Faonni_HidePrice_Helper</class>
-			</faonni_hideprice>
-		</helpers>
+    <modules>
+        <Faonni_HidePrice>
+            <version>1.1.1</version>
+        </Faonni_HidePrice>
+    </modules>
+    <global>
+        <helpers>
+            <faonni_hideprice>
+                <class>Faonni_HidePrice_Helper</class>
+            </faonni_hideprice>
+        </helpers>
         <models>
             <faonni_hideprice>
                 <class>Faonni_HidePrice_Model</class>
-            </faonni_hideprice>		
-        </models>		
-	</global>
+            </faonni_hideprice>
+        </models>
+    </global>
     <frontend>
-        <events>					
-			<catalog_product_collection_load_after>
-				<observers>
-					<faonni_hideprice_collection_load>
-						<type>singleton</type>
-						<class>faonni_hideprice/observer</class>
-						<method>collectionLoadAfter</method>
-					</faonni_hideprice_collection_load>
-				</observers>
-			</catalog_product_collection_load_after>
-			<catalog_product_load_after>
-				<observers>
-					<faonni_hideprice_product_load>
-						<class>faonni_hideprice/observer</class>
-						<method>productLoadAfter</method>
-					</faonni_hideprice_product_load>
-				</observers>
-			</catalog_product_load_after>		
-        </events>		
+        <events>
+            <catalog_product_collection_load_after>
+                <observers>
+                    <faonni_hideprice_collection_load>
+                        <type>singleton</type>
+                        <class>faonni_hideprice/observer</class>
+                        <method>collectionLoadAfter</method>
+                    </faonni_hideprice_collection_load>
+                </observers>
+            </catalog_product_collection_load_after>
+            <catalog_product_load_after>
+                <observers>
+                    <faonni_hideprice_product_load>
+                        <class>faonni_hideprice/observer</class>
+                        <method>productLoadAfter</method>
+                    </faonni_hideprice_product_load>
+                </observers>
+            </catalog_product_load_after>
+        </events>
     </frontend>
     <default>
         <catalog>
@@ -66,5 +66,5 @@
                 <hide_price>0</hide_price>
             </access_option>
         </catalog>
-    </default>		
-</config> 
+    </default>
+</config>
