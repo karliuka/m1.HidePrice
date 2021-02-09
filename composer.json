@@ -1,0 +1,21 @@
+{
+    "name": "faonni/magento-hide-price",
+    "license": "OSL-3.0",
+    "type": "magento-module",
+    "description": "HidePrice extension allows to hide price from guests or certain customer groups according to your store needs",
+    "version": "1.2.0",
+    "authors": [{
+        "name": "Karliuka Vitalii",
+        "email": "karliuka.vitalii@gmail.com"
+    }],
+    "require": {
+        "openmage/magento-lts": ">=19.4.0",
+        "faonni/magento-hide-addtocart": "1.2.*"
+    },
+    "extra": {
+        "map": [
+            ["app/etc/modules/Faonni_HidePrice.xml", "app/etc/modules/Faonni_HidePrice.xml"],
+            ["app/code/community/Faonni/HidePrice/", "app/code/community/Faonni/HidePrice/"]
+        ]
+    }
+}
